@@ -1,6 +1,7 @@
 // controllers/recipes/get.js
 
 const Recipes = require("../../models/recipe.model");
+const { fetchIngredients } = require("../../services/recipes.service");
 // const Category = require("../../models/category.model");
 
 const getMainrecipesByCategory = async (req, res, next) => {
@@ -60,9 +61,20 @@ const getRecipesByCategory = async (req, res) => {
     res.status(500).json({ message: "Error fetching recipies by category" });
   }
 };
+const getIngredientsList = async (req, res) => {
+  try {
+    const ingredients = await fetchIngredients();
+
+    res.json({ ingredients });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error fetching recipe" });
+  }
+};
 
 module.exports = {
   getMainrecipesByCategory,
   getCategory,
   getRecipesByCategory,
+  getIngredientsList,
 };

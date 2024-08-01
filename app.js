@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const { recipesRouter } = require("./routes/recipes.routes");
+const { ingredientsRouter } = require("./routes/ingredients.routes");
 require("dotenv").config();
 const path = require("path");
 const logger = require("morgan");
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/recipes", recipesRouter);
+app.use("/ingredients", ingredientsRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: `Not found - ${req.path}` });
