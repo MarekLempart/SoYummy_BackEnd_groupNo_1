@@ -3,7 +3,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-
+const { recipesRouter } = require("./routes/recipes.routes");
+const { ingredientsRouter } = require("./routes/ingredients.routes");
 require("dotenv").config();
 const path = require("path");
 const logger = require("morgan");
