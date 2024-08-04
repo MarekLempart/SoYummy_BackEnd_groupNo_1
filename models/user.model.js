@@ -56,6 +56,13 @@ const user = new Schema({
       ref: "recipes",
     },
   ],
+  shoppingList: [
+    {
+      name: String,
+      quantity: Number,
+      unit: String,
+    },
+  ],
 });
 
 user.methods.setPassword = function (password) {
