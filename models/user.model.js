@@ -58,6 +58,10 @@ const user = new Schema({
   ],
   shoppingList: [
     {
+      ingredientId: {
+        type: Schema.Types.ObjectId,
+        ref: "ingredients",
+      },
       name: String,
       quantity: Number,
       unit: String,
