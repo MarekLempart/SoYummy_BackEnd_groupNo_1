@@ -47,4 +47,6 @@ recipesRouter.get(
   recipesController.getShoppingList
 );
 
+recipesRouter.get("/popular/recipe", recipesController.getPopularRecipes);
+
 module.exports = { recipesRouter };
