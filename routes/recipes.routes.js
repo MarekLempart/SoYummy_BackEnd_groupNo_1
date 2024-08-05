@@ -31,5 +31,20 @@ recipesRouter.delete(
   recipesController.removeFavoriteRecipe
 );
 recipesRouter.get("/popular/recipe", recipesController.getPopularRecipes);
+recipesRouter.post(
+  "/shopping-list/add",
+  auth,
+  recipesController.addProductToShoppingList
+);
+recipesRouter.delete(
+  "/shopping-list/remove",
+  auth,
+  recipesController.removeProductFromShoppingList
+);
+recipesRouter.get(
+  "/shopping-list/user",
+  auth,
+  recipesController.getShoppingList
+);
 
 module.exports = { recipesRouter };
