@@ -14,6 +14,9 @@ const addFavoriteRecipe = require("./favouriteRecipes/addFavoriteRecipe");
 const getFavoriteRecipes = require("./favouriteRecipes/getFavoriteRecipes");
 const removeFavoriteRecipe = require("./favouriteRecipes/removeFavoriteRecipe");
 const getPopularRecipes = require("./recipes/getPopularRecipes");
+const addProductToShoppingList = require("./shoppingList/addProductToShoppingList");
+const removeProductFromShoppingList = require("./shoppingList/removeProductFromShoppingList");
+const getShoppingList = require("./shoppingList/getShoppingList");
 
 module.exports = {
   addOwnRecipe,
@@ -30,4 +33,7 @@ module.exports = {
   getFavoriteRecipes,
   removeFavoriteRecipe,
   getPopularRecipes,
+  addProductToShoppingList,
+  removeProductFromShoppingList,
+  getShoppingList,
 };
