@@ -23,3 +23,23 @@ const getCurrentUser = async (req, res) => {
 };
 
 module.exports = getCurrentUser;
+
+/*
+Czy tutaj mogę zamienić kod?..........................................
+// controllers/auth/getCurrentUser.js
+const getCurrentUser = async (req, res) => {
+  try {
+    const { name, email, subscription, avatarURL } = req.user;
+    res.status(200).json({
+      status: 'success',
+      code: 200,
+      data: { name, email, subscription, avatarURL },
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = getCurrentUser;
+
+*/

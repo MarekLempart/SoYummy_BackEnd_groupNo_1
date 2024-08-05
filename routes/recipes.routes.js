@@ -50,3 +50,15 @@ recipesRouter.get(
 recipesRouter.get("/popular/recipe", recipesController.getPopularRecipes);
 
 module.exports = { recipesRouter };
+
+/*
+CZy mogę to podmienić?...................................................................................................
+
+routes/recipes.routes.js
+const express = require('express');
+const router = express.Router();
+const searchRecipe = require('../controllers/recipes/searchRecipe');
+
+router.get('/search', searchRecipe);
+
+module.exports = router; */
