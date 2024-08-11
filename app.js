@@ -29,25 +29,32 @@ const allowedOrigins = [
   // process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
 ];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    // Sprawdzanie, czy źródło żądania znajduje się na liście dozwolonych
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: "Content-Type, Authorization",
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     // Sprawdzanie, czy źródło żądania znajduje się na liście dozwolonych
+//     if (allowedOrigins.includes(origin) || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   allowedHeaders: "Content-Type, Authorization",
+//   credentials: true,
+// };
 
 // const corsOptions = {
 //   origin: "*",
 //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 //   allowedHeaders: "Content-Type, Authorization",
 // };
+
+const corsOptions = {
+  origin: "*", // Pozwól na żądania z dowolnego źródła
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true,
+};
 
 const passport = require("./config/passport");
 app.use(passport.initialize());
