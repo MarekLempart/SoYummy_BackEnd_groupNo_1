@@ -25,8 +25,8 @@ app.use(logger(formatsLogger));
 // Dynamiczne ustawienia CORS
 const allowedOrigins = [
   "http://localhost:5173", // Dla deweloperki
-  "https://mareklempart.github.io/SoYummy_FrontEnd_groupNo_1", // Dla deweloperki
-  process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
+  "https://mareklempart.github.io/SoYummy_FrontEnd_groupNo_1",
+  // process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
 ];
 
 const corsOptions = {
