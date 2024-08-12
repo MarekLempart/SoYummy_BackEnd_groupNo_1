@@ -26,7 +26,7 @@ app.use(logger(formatsLogger));
 const allowedOrigins = [
   "http://localhost:5173", // Dla deweloperki
   "https://mareklempart.github.io/SoYummy_FrontEnd_groupNo_1",
-  // process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
+  process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
 ];
 
 const corsOptions = {
