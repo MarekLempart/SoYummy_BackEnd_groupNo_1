@@ -29,6 +29,15 @@ const resendEmailSchema = Joi.object({
   email: emailValidation,
 });
 
+const sendContactEmailSchema = Joi.object({
+  to: Joi.string().email().required(),
+  subject: Joi.string().required(),
+  name: Joi.string().min(3).max(100).required(),
+  email: Joi.string().email().required(),
+  phone: Joi.string().min(7).max(15).required(),
+  text: Joi.string().min(10).max(500).required(),
+});
+
 const updateNameSchema = Joi.object({
   name: nameValidation,
 });
@@ -49,4 +58,5 @@ module.exports = {
   updateNameSchema,
   updateMailSchema,
   updatePasswordSchema,
+  sendContactEmailSchema,
 };

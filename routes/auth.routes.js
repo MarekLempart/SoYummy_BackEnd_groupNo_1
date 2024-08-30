@@ -10,6 +10,7 @@ const resendVerificationEmail = require("../controllers/auth/resendVerificationE
 
 // Nowe kontrolery
 const sendEmail = require("../controllers/auth/sendEmail");
+const sendContactEmail = require("../controllers/auth/sendContactEmail");
 const updateName = require("../controllers/auth/updateName");
 const updateMail = require("../controllers/auth/updateMail");
 const updatePassword = require("../controllers/auth/updatePassword");
@@ -23,6 +24,7 @@ const {
   updateMailSchema,
   updatePasswordSchema,
   sendEmailSchema,
+  sendContactEmailSchema,
   sendNewsletterEmailSchema,
 } = require("../validations/validation");
 
@@ -235,6 +237,35 @@ router.post("/verify", resendVerificationEmail);
  *         description: Failed to send email
  */
 router.post("/send-email", auth, validate(sendEmailSchema), sendEmail);
+
+/**
+ * @swagger
+ * /api/v1/contact:
+ *   post:
+ *     summary: Send contact email
+ *     tags: [Contact]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               phone:
+ *                 type: string
+ *               text:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Email sent successfully
+ *       500:
+ *         description: Failed to send email
+ */
+router.post("/contact", validate(sendContactEmailSchema), sendContactEmail);
 
 /**
  * @swagger

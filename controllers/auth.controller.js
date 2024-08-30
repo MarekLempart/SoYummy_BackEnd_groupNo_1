@@ -10,6 +10,7 @@ const getCurrentUser = require("./auth/getCurrentUser");
 const updateSubscription = require("./auth/updateSubscription");
 
 const sendEmail = require("./auth/sendEmail");
+const sendContactEmail = require("./auth/sendContactEmail");
 const updateName = require("./auth/updateName");
 const updateMail = require("./auth/updateMail");
 const updatePassword = require("./auth/updatePassword");
@@ -26,6 +27,7 @@ module.exports = {
   verifyEmail,
   getCurrentUser,
   sendEmail,
+  sendContactEmail,
   updateName,
   updateMail,
   updatePassword,
