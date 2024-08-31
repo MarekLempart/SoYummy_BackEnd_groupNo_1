@@ -26,6 +26,7 @@ app.use(logger(formatsLogger));
 const allowedOrigins = [
   "http://localhost:1234", // Dla deweloperki
   "https://mareklempart.github.io/SoYummy_FrontEnd_groupNo_1",
+  "https://mareklempart.github.io/beZone-Sport/",
   process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
 ];
 
