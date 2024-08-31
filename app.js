@@ -24,7 +24,7 @@ app.use(logger(formatsLogger));
 
 // Dynamiczne ustawienia CORS
 const allowedOrigins = [
-  "http://localhost:5173", // Dla deweloperki
+  "http://localhost:1234", // Dla deweloperki
   "https://mareklempart.github.io/SoYummy_FrontEnd_groupNo_1",
   process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
 ];
@@ -93,7 +93,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:4100",
+        url: "http://localhost:3000",
         description: "Local server",
       },
       {
