@@ -25,7 +25,7 @@ app.use(logger(formatsLogger));
 // Dynamiczne ustawienia CORS
 const allowedOrigins = [
   "http://localhost:1234", // Dla deweloperki
-  "https://mareklempart.github.io/beZone-Sport/",
+  "https://mareklempart.github.io",
   process.env.FRONTEND_URL, // Możliwy przyszły URL frontendu w produkcji
 ];
 
